@@ -7,7 +7,7 @@ int main() {
 	int lib_ver = PQlibVersion();
 	/*printf("Version of libpq: %d\n", lib_ver);*/
 
-	PGconn* conn = PQconnectdb("host=127.0.0.1 dbname=credit user=postgres password=chen4");
+	PGconn* conn = PQconnectdb(/*                                         */);
 	if (PQstatus(conn) == CONNECTION_BAD) {
 		fprintf(stderr, "Connection to database failed: %s\n",
 			PQerrorMessage(conn));

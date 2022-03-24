@@ -24,13 +24,13 @@ private:
 	unordered_map<string, int> dic; // 每个字段所对应的是哪一维特征
 
 public:
-	RLSA(vector<vector<string>>& seq, vector<double>& ans, unordered_map<pair<string, string>, string>& var,vector<string>& all, string dbname) {
+	RLSA(vector<vector<string>>& seq, vector<double>& ans, unordered_map<pair<string, string>, string>& var,vector<string>& all, string dbname， string password, string host) {
 		joinseq = seq;
 		cur_ans = ans;
 		join_var = var;
 		alltables = all;
 
-		conn = PQconnectdb("host=127.0.0.1 dbname=" + dbname + " user=postgres password=chen4");
+		conn = PQconnectdb("host="+host + " dbname=" + dbname + " user=postgres password=" + password);
 		if (PQstatus(conn) == CONNECTION_BAD) {
 			fprintf(stderr, "Connection to database failed: %s\n",
 			PQerrorMessage(conn));
@@ -75,7 +75,7 @@ public:
 		/*   not completed   */
 		int i = start;
 		do{
-			string sql = "";
+			string sql = ""; //先生成一个view，里面是group by count()的结果，然后对于后面的表直接去查view就好了
 			auto res = PQexec(conn, sql.c_str());
 			i--;
 		}while(i!=end);
