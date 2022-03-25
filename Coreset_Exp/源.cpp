@@ -7,7 +7,7 @@ int main() {
 	int lib_ver = PQlibVersion();
 	/*printf("Version of libpq: %d\n", lib_ver);*/
 
-	PGconn* conn = PQconnectdb(/*                                         */);
+	//PGconn* conn = PQconnectdb(/*                                         */);
 	if (PQstatus(conn) == CONNECTION_BAD) {
 		fprintf(stderr, "Connection to database failed: %s\n",
 			PQerrorMessage(conn));
@@ -15,7 +15,7 @@ int main() {
 		return 0;
 	}
 	int ver = PQserverVersion(conn);
-	/*printf("Server version: %d\n", ver);*/
+	
 
 	string sql = "select * from train_data, bureau, bureau_balance where train_data.SK_ID_CURR = bureau.SK_ID_CURR and bureau.SK_ID_BUREAU = bureau_balance.SK_ID_BUREAU limit 1000000;";
 	auto res = PQexec(conn, sql.c_str());

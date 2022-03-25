@@ -1,0 +1,368 @@
+DROP TABLE train_data;
+CREATE TABLE train_data(
+	SK_ID_CURR INTEGER PRIMARY KEY NOT NULL,
+	CNT_CHILDREN INTEGER NOT NULL,
+	AMT_INCOME_TOTAL DOUBLE precision NOT NULL,
+	AMT_CREDIT DOUBLE precision NOT NULL,
+	NAME_INCOME_TYPE INTEGER NOT NULL,
+	NAME_FAMILY_STATUS INTEGER NOT NULL,
+	NAME_HOUSING_TYPE INTEGER NOT NULL,
+	REGION_POPULATION_RELATIVE DOUBLE precision NOT NULL,
+	DAYS_BIRTH INTEGER NOT NULL,
+	DAYS_EMPLOYED INTEGER NOT NULL,
+	DAYS_REGISTRATION DOUBLE precision NOT NULL,
+	DAYS_ID_PUBLISH	INTEGER NOT NULL,
+	FLAG_MOBIL INTEGER NOT NULL,
+	FLAG_EMP_PHONE INTEGER NOT NULL,
+	FLAG_WORK_PHONE	INTEGER NOT NULL,
+	FLAG_CONT_MOBILE INTEGER NOT NULL,
+	FLAG_PHONE INTEGER NOT NULL,
+	FLAG_EMAIL INTEGER NOT NULL,
+	REGION_RATING_CLIENT INTEGER NOT NULL,
+	REGION_RATING_CLIENT_W_CITY	INTEGER NOT NULL,
+	WEEKDAY_APPR_PROCESS_START INTEGER NOT NULL,
+	HOUR_APPR_PROCESS_START	INTEGER NOT NULL,
+	REG_REGION_NOT_LIVE_REGION INTEGER NOT NULL,
+	REG_REGION_NOT_WORK_REGION INTEGER NOT NULL,
+	LIVE_REGION_NOT_WORK_REGION	INTEGER NOT NULL,
+	REG_CITY_NOT_LIVE_CITY INTEGER NOT NULL,
+	REG_CITY_NOT_WORK_CITY INTEGER NOT NULL,
+	LIVE_CITY_NOT_WORK_CITY	INTEGER NOT NULL,
+	ORGANIZATION_TYPE INTEGER NOT NULL,
+	FLAG_DOCUMENT_2	INTEGER NOT NULL,
+	FLAG_DOCUMENT_3	INTEGER NOT NULL,
+	FLAG_DOCUMENT_4	INTEGER NOT NULL,
+	FLAG_DOCUMENT_5	INTEGER NOT NULL,
+	FLAG_DOCUMENT_6	INTEGER NOT NULL,
+	FLAG_DOCUMENT_7	INTEGER NOT NULL,
+	FLAG_DOCUMENT_8	INTEGER NOT NULL,
+	FLAG_DOCUMENT_9	INTEGER NOT NULL,
+	FLAG_DOCUMENT_10 INTEGER NOT NULL,
+	FLAG_DOCUMENT_11 INTEGER NOT NULL,
+	FLAG_DOCUMENT_12 INTEGER NOT NULL,
+	FLAG_DOCUMENT_13 INTEGER NOT NULL,
+	FLAG_DOCUMENT_14 INTEGER NOT NULL,
+	FLAG_DOCUMENT_15 INTEGER NOT NULL,
+	FLAG_DOCUMENT_16 INTEGER NOT NULL,
+	FLAG_DOCUMENT_17 INTEGER NOT NULL,
+	FLAG_DOCUMENT_18 INTEGER NOT NULL,
+	FLAG_DOCUMENT_19 INTEGER NOT NULL,
+	FLAG_DOCUMENT_20 INTEGER NOT NULL,
+	FLAG_DOCUMENT_21 INTEGER NOT NULL,
+	TARGET INTEGER NOT NULL,
+	NAME_CONTRACT_TYPE_Cash_loans smallint NOT NULL,
+	NAME_CONTRACT_TYPE_Revolving_loans smallint NOT NULL,
+	CODE_GENDER_F smallint NOT NULL,
+	CODE_GENDER_M smallint NOT NULL,
+	FLAG_OWN_CAR_N smallint NOT NULL,
+	FLAG_OWN_CAR_Y smallint NOT NULL,
+	FLAG_OWN_REALTY_N smallint NOT NULL,
+	FLAG_OWN_REALTY_Y smallint NOT NULL,
+	NAME_EDUCATION_TYPE_Academic_degree	smallint NOT NULL,
+	NAME_EDUCATION_TYPE_Higher_education smallint NOT NULL,
+	NAME_EDUCATION_TYPE_Incomplete_higher smallint NOT NULL,
+	NAME_EDUCATION_TYPE_Lower_secondary	smallint NOT NULL,
+	NAME_EDUCATION_TYPE_Secondary_secondary_special smallint NOT NULL
+);
+
+select count(*) from train_data;
+
+
+
+
+DROP TABLE test_data;
+CREATE TABLE test_data(
+	SK_ID_CURR INTEGER PRIMARY KEY NOT NULL,
+	CNT_CHILDREN INTEGER NOT NULL,
+	AMT_INCOME_TOTAL DOUBLE precision NOT NULL,
+	AMT_CREDIT DOUBLE precision NOT NULL,
+	NAME_INCOME_TYPE INTEGER NOT NULL,
+	NAME_FAMILY_STATUS INTEGER NOT NULL,
+	NAME_HOUSING_TYPE INTEGER NOT NULL,
+	REGION_POPULATION_RELATIVE DOUBLE precision NOT NULL,
+	DAYS_BIRTH INTEGER NOT NULL,
+	DAYS_EMPLOYED INTEGER NOT NULL,
+	DAYS_REGISTRATION DOUBLE precision NOT NULL,
+	DAYS_ID_PUBLISH	INTEGER NOT NULL,
+	FLAG_MOBIL INTEGER NOT NULL,
+	FLAG_EMP_PHONE INTEGER NOT NULL,
+	FLAG_WORK_PHONE	INTEGER NOT NULL,
+	FLAG_CONT_MOBILE INTEGER NOT NULL,
+	FLAG_PHONE INTEGER NOT NULL,
+	FLAG_EMAIL INTEGER NOT NULL,
+	REGION_RATING_CLIENT INTEGER NOT NULL,
+	REGION_RATING_CLIENT_W_CITY	INTEGER NOT NULL,
+	WEEKDAY_APPR_PROCESS_START INTEGER NOT NULL,
+	HOUR_APPR_PROCESS_START	INTEGER NOT NULL,
+	REG_REGION_NOT_LIVE_REGION INTEGER NOT NULL,
+	REG_REGION_NOT_WORK_REGION INTEGER NOT NULL,
+	LIVE_REGION_NOT_WORK_REGION	INTEGER NOT NULL,
+	REG_CITY_NOT_LIVE_CITY INTEGER NOT NULL,
+	REG_CITY_NOT_WORK_CITY INTEGER NOT NULL,
+	LIVE_CITY_NOT_WORK_CITY	INTEGER NOT NULL,
+	ORGANIZATION_TYPE INTEGER NOT NULL,
+	FLAG_DOCUMENT_2	INTEGER NOT NULL,
+	FLAG_DOCUMENT_3	INTEGER NOT NULL,
+	FLAG_DOCUMENT_4	INTEGER NOT NULL,
+	FLAG_DOCUMENT_5	INTEGER NOT NULL,
+	FLAG_DOCUMENT_6	INTEGER NOT NULL,
+	FLAG_DOCUMENT_7	INTEGER NOT NULL,
+	FLAG_DOCUMENT_8	INTEGER NOT NULL,
+	FLAG_DOCUMENT_9	INTEGER NOT NULL,
+	FLAG_DOCUMENT_10 INTEGER NOT NULL,
+	FLAG_DOCUMENT_11 INTEGER NOT NULL,
+	FLAG_DOCUMENT_12 INTEGER NOT NULL,
+	FLAG_DOCUMENT_13 INTEGER NOT NULL,
+	FLAG_DOCUMENT_14 INTEGER NOT NULL,
+	FLAG_DOCUMENT_15 INTEGER NOT NULL,
+	FLAG_DOCUMENT_16 INTEGER NOT NULL,
+	FLAG_DOCUMENT_17 INTEGER NOT NULL,
+	FLAG_DOCUMENT_18 INTEGER NOT NULL,
+	FLAG_DOCUMENT_19 INTEGER NOT NULL,
+	FLAG_DOCUMENT_20 INTEGER NOT NULL,
+	FLAG_DOCUMENT_21 INTEGER NOT NULL,
+	NAME_CONTRACT_TYPE_Cash_loans smallint NOT NULL,
+	NAME_CONTRACT_TYPE_Revolving_loans smallint NOT NULL,
+	CODE_GENDER_F smallint NOT NULL,
+	CODE_GENDER_M smallint NOT NULL,
+	FLAG_OWN_CAR_N smallint NOT NULL,
+	FLAG_OWN_CAR_Y smallint NOT NULL,
+	FLAG_OWN_REALTY_N smallint NOT NULL,
+	FLAG_OWN_REALTY_Y smallint NOT NULL,
+	NAME_EDUCATION_TYPE_Academic_degree	smallint NOT NULL,
+	NAME_EDUCATION_TYPE_Higher_education smallint NOT NULL,
+	NAME_EDUCATION_TYPE_Incomplete_higher smallint NOT NULL,
+	NAME_EDUCATION_TYPE_Lower_secondary	smallint NOT NULL,
+	NAME_EDUCATION_TYPE_Secondary_secondary_special smallint NOT NULL
+);
+
+select * from test_data limit 5;
+
+
+
+DROP TABLE bureau;
+CREATE TABLE bureau(
+	SK_ID_CURR INTEGER NOT NULL,
+	SK_ID_BUREAU INTEGER PRIMARY KEY NOT NULL,
+	DAYS_CREDIT INTEGER NOT NULL,
+	CREDIT_DAY_OVERDUE INTEGER NOT NULL,
+	CNT_CREDIT_PROLONG INTEGER NOT NULL,
+	AMT_CREDIT_SUM_OVERDUE DOUBLE precision NOT NULL,
+	CREDIT_TYPE	INTEGER NOT NULL,
+	DAYS_CREDIT_UPDATE INTEGER NOT NULL,
+	CREDIT_ACTIVE_Active INTEGER NOT NULL,
+	CREDIT_ACTIVE_Bad_debt INTEGER NOT NULL,
+	CREDIT_ACTIVE_Closed INTEGER NOT NULL,
+	CREDIT_ACTIVE_Sold INTEGER NOT NULL,
+	CREDIT_CURRENCY_currency_1 INTEGER NOT NULL,
+	CREDIT_CURRENCY_currency_2 INTEGER NOT NULL,
+	CREDIT_CURRENCY_currency_3 INTEGER NOT NULL,
+	CREDIT_CURRENCY_currency_4 INTEGER NOT NULL
+);
+
+select count(*) from bureau;
+
+
+
+
+
+DROP TABLE bureau_balance;
+CREATE TABLE bureau_balance(
+	SK_ID_BUREAU INTEGER NOT NULL,
+	MONTHS_BALANCE INTEGER NOT NULL,
+	STATUS INTEGER NOT NULL
+);
+select count(*) from bureau_balance;
+select * from bureau_balance limit 5;
+
+
+
+
+DROP TABLE previous;
+CREATE TABLE previous(
+	SK_ID_PREV INTEGER PRIMARY KEY NOT NULL,
+	SK_ID_CURR INTEGER NOT NULL,
+	AMT_APPLICATION	DOUBLE precision NOT NULL,
+	WEEKDAY_APPR_PROCESS_START INTEGER NOT NULL,
+	HOUR_APPR_PROCESS_START	INTEGER NOT NULL,
+	NFLAG_LAST_APPL_IN_DAY INTEGER NOT NULL,
+	NAME_CASH_LOAN_PURPOSE INTEGER NOT NULL,
+	DAYS_DECISION INTEGER NOT NULL,
+	CODE_REJECT_REASON INTEGER NOT NULL,
+	NAME_GOODS_CATEGORY INTEGER NOT NULL,
+	CHANNEL_TYPE INTEGER NOT NULL,
+	SELLERPLACE_AREA INTEGER NOT NULL,
+	NAME_SELLER_INDUSTRY INTEGER NOT NULL,
+	NAME_CONTRACT_TYPE_Cash_loans INTEGER NOT NULL,
+	NAME_CONTRACT_TYPE_Consumer_loans INTEGER NOT NULL,
+	NAME_CONTRACT_TYPE_Revolving_loans INTEGER NOT NULL,
+	NAME_CONTRACT_TYPE_XNA INTEGER NOT NULL,
+	FLAG_LAST_APPL_PER_CONTRACT_N INTEGER NOT NULL,
+	FLAG_LAST_APPL_PER_CONTRACT_Y INTEGER NOT NULL,
+	NAME_CONTRACT_STATUS_Approved INTEGER NOT NULL,
+	NAME_CONTRACT_STATUS_Canceled INTEGER NOT NULL,
+	NAME_CONTRACT_STATUS_Refused INTEGER NOT NULL,
+	NAME_CONTRACT_STATUS_Unused_offer INTEGER NOT NULL,	
+	NAME_PAYMENT_TYPE_Cash_through_the_bank	INTEGER NOT NULL,
+	NAME_PAYMENT_TYPE_Cashless_from_the_account_of_the_employer	INTEGER NOT NULL,
+	NAME_PAYMENT_TYPE_Non_cash_from_your_account INTEGER NOT NULL,	
+	NAME_PAYMENT_TYPE_XNA INTEGER NOT NULL,	
+	NAME_CLIENT_TYPE_New INTEGER NOT NULL,
+	NAME_CLIENT_TYPE_Refreshed INTEGER NOT NULL,
+	NAME_CLIENT_TYPE_Repeater INTEGER NOT NULL,
+	NAME_CLIENT_TYPE_XNA INTEGER NOT NULL,
+	NAME_PORTFOLIO_Cards INTEGER NOT NULL,
+	NAME_PORTFOLIO_Cars INTEGER NOT NULL,
+	NAME_PORTFOLIO_Cash INTEGER NOT NULL,
+	NAME_PORTFOLIO_POS INTEGER NOT NULL,
+	NAME_PORTFOLIO_XNA INTEGER NOT NULL,
+	NAME_PRODUCT_TYPE_XNA INTEGER NOT NULL,
+	NAME_PRODUCT_TYPE_walk_n INTEGER NOT NULL,
+	NAME_PRODUCT_TYPE_x_sell INTEGER NOT NULL,	
+	NAME_YIELD_GROUP_XNA INTEGER NOT NULL,
+	NAME_YIELD_GROUP_high INTEGER NOT NULL,
+	NAME_YIELD_GROUP_low_action INTEGER NOT NULL,
+	NAME_YIELD_GROUP_low_normal INTEGER NOT NULL,
+	NAME_YIELD_GROUP_middle INTEGER NOT NULL
+);
+select count(*) from previous;
+select * from previous limit 5;
+
+
+
+DROP TABLE credit_card;
+CREATE TABLE credit_card(
+	SK_ID_PREV INTEGER NOT NULL,
+	SK_ID_CURR INTEGER NOT NULL,
+	MONTHS_BALANCE INTEGER NOT NULL,
+	AMT_BALANCE	DOUBLE precision NOT NULL,
+	AMT_CREDIT_LIMIT_ACTUAL INTEGER NOT NULL,
+	AMT_DRAWINGS_CURRENT DOUBLE precision NOT NULL,
+	AMT_PAYMENT_TOTAL_CURRENT DOUBLE precision NOT NULL,
+	AMT_RECEIVABLE_PRINCIPAL DOUBLE precision NOT NULL,
+	AMT_RECIVABLE DOUBLE precision NOT NULL,
+	AMT_TOTAL_RECEIVABLE DOUBLE precision NOT NULL,
+	CNT_DRAWINGS_CURRENT INTEGER NOT NULL,
+	NAME_CONTRACT_STATUS INTEGER NOT NULL,
+	SK_DPD INTEGER NOT NULL,
+	SK_DPD_DEF INTEGER NOT NULL
+);
+select count(*) from credit_card;
+select * from credit_card limit 5;
+
+
+
+
+DROP TABLE installments;
+CREATE TABLE installments(
+	SK_ID_PREV INTEGER NOT NULL,
+	SK_ID_CURR INTEGER NOT NULL,
+	NUM_INSTALMENT_VERSION DOUBLE precision NOT NULL,
+	NUM_INSTALMENT_NUMBER INTEGER NOT NULL,
+	DAYS_INSTALMENT DOUBLE precision NOT NULL,
+	AMT_INSTALMEN DOUBLE precision NOT NULL
+);
+select count(*) from installments;
+select * from installments limit 5;
+
+
+
+
+DROP TABLE pos_cash;
+CREATE TABLE pos_cash(
+	SK_ID_PREV INTEGER NOT NULL,
+	SK_ID_CURR INTEGER NOT NULL,
+	MONTHS_BALANCE INTEGER NOT NULL,
+	NAME_CONTRACT_STATUS INTEGER NOT NULL,
+	SK_DPD INTEGER NOT NULL,
+	SK_DPD_DEF INTEGER NOT NULL
+);
+select count(*) from pos_cash;
+select * from pos_cash limit 5;
+
+
+
+/* 创建聚簇索引加快统计过程* /
+
+select * from pos_cash limit 20;
+CREATE INDEX pos_cash_idx ON pos_cash(sk_id_prev);
+CLUSTER pos_cash USING pos_cash_idx;
+
+
+select * from installments limit 20;
+CREATE INDEX installments_idx ON installments(sk_id_prev);
+CLUSTER installments USING installments_idx;
+
+
+select * from credit_card limit 20;
+CREATE INDEX credit_card_idx ON credit_card(sk_id_prev);
+CLUSTER credit_card USING credit_card_idx;
+
+
+select * from previous limit 20;
+CREATE INDEX previous_idx ON previous(sk_id_curr);
+CLUSTER previous USING previous_idx;
+
+
+select * from train_data limit 20;
+CREATE INDEX train_data_idx ON train_data(sk_id_curr);
+CLUSTER train_data USING train_data_idx;
+
+
+select * from test_data limit 20;
+CREATE INDEX test_data_idx ON test_data(sk_id_curr);
+CLUSTER test_data USING test_data_idx;
+
+
+/* 为了超长链实验（分叉表为previous） */
+select * from bureau limit 20;
+CREATE INDEX bureau_idx ON bureau(sk_id_bureau);
+CLUSTER bureau USING bureau_idx;
+
+/* multiway实验（分叉表为train_data） 
+select * from bureau limit 20;
+CREATE INDEX bureau_idx ON bureau(sk_id_curr);
+CLUSTER bureau USING bureau_idx;*/
+
+
+select * from bureau_balance limit 20;
+CREATE INDEX bureau_balance_idx ON bureau_balance(sk_id_bureau);
+CLUSTER bureau_balance USING bureau_balance_idx;
+
+
+/* 对每个表增加x, y, x+y, label四列，并赋值 */
+drop view pos_cash_full_view cascade;
+create view pos_cash_full_view as select pos_cash.sk_id_prev, count(pos_cash.sk_id_prev) val from pos_cash group by pos_cash.sk_id_prev;
+select * from pos_cash_full_view;
+
+
+drop view installments_full_view cascade;
+create view installments_full_view as select installments.sk_id_prev, count(installments.sk_id_prev) val from installments group by installments.sk_id_prev;
+select * from installments_full_view;
+
+
+drop view credit_card_full_view cascade;
+create view credit_card_full_view as select credit_card.sk_id_prev, count(credit_card.sk_id_prev) val from credit_card group by credit_card.sk_id_prev;
+select * from credit_card_full_view;
+
+
+/* 没有用credit_card表因为null太多 */
+drop view previous_res_view cascade;
+create view previous_res_view as select sk_id_curr, sk_id_prev, COALESCE((select pos_cash_full_view.val from pos_cash_full_view where previous.sk_id_prev=pos_cash_full_view.sk_id_prev)*
+															   (select installments_full_view.val from installments_full_view where previous.sk_id_prev=installments_full_view.sk_id_prev)
+															   , 0) val
+from previous;
+
+
+drop view previous_full_view cascade;
+create view previous_full_view as select sk_id_curr, sum(val) val from previous_res_view group by sk_id_curr;
+select * from previous_res_view where sk_id_curr=100007;
+select * from previous_full_view limit 20;
+
+
+create view train_data_res_view as select sk_id_curr, COALESCE((select previous_full_view.val from previous_full_view where train_data.sk_id_curr=previous_full_view.sk_id_curr), 0) val
+from train_data;
+select * from train_data_res_view;
+
+
+select * from pg_views where viewname='previous_res_view';
