@@ -33,7 +33,7 @@ public:
 		totail = tail;
 		tohead = head;
 
-		conn = PQsetdbLogin("127.0.0.1", "5432", NULL, NULL, "credit", "postgres", "chen4");
+		
 		// conn = PQsetdbLogin(host, "5432", NULL, NULL, dbname, "postgres", password);
 		if (PQstatus(conn) == CONNECTION_BAD) {
 			fprintf(stderr, "Connection to database failed: %s\n",
